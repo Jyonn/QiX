@@ -1,0 +1,76 @@
+<view class="container">
+  <view class="main" wx:if="{{loaded}}">
+    <view class="article-header">
+      <view class="title-box">
+        <text class="title" bindtap="editTitle">{{article.title}}</text>
+      </view>
+      <view class="description">
+        <text class="item self-producted" wx:if="{{article.self_product}}">原创</text>
+        <text class="item author" bindtap="editAuthor">{{article.author}}</text>
+        <text class="item origin" bindtap="editOrigin">{{article.origin}}</text>
+        <text class="item date">{{article.create_time}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="comments" wx:if="{{loaded}}">
+    <view class="header">
+      <text class="item title">精选留言</text>
+      <text class="item write-comment" bindtap="startWrite" wx:if="{{hasUserInfo}}">写留言</text>
+      <button open-type="getUserInfo" class="item write-comment" size="mini" plain bindgetuserinfo="getUserInfo" wx:else>写留言</button>
+    </view>
+    <view class="content-list">
+      <view class="content" wx:for="{{article.comments}}" wx:key="create_time" bindtap="tapComment" data-content="{{item.content}}" data-cid="{{item.cid}}">
+        <image class="avatar" src="{{item.user.avatar}}"></image>
+        <view class="user-box">
+          <view class="first-line">
+            <text class="nickname">{{item.user.nickname}}</text>
+            <text class="icon icon-delete" data-type='delete' wx:if="{{is_owner || userID == item.user.user_id}}"></text>
+          </view>
+          <text class="raw-content">{{item.content}}</text>
+          <view class="replies">
+            <view class="reply-box" wx:for="{{item.replies}}">
+              <view class="first-line">
+                <text class="nickname">{{item.user.nickname}}</text>
+                <text class="icon icon-delete" data-cid='{{item.cid}}' wx:if="{{is_owner || userID == item.user.user_id}}" catchtap="deleteReply"></text>
+              </view>
+              <text class="raw-content">{{item.content}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<qiX-input 
+  id="qinput" 
+  title="写留言" 
+  max_length="-1"
+  use_textarea="{{true}}"
+  placeholder="留言被公众号精选后，将对所有人可见"
+  submit_text="提交"
+  bind:submit="submitComment"
+></qiX-input>
+
+<qiX-input 
+  id="qreply" 
+  title="写回复" 
+  max_length="-1"
+  use_textarea="{{true}}"
+  placeholder="留言的回复被公众号精选后，将对所有人可见"
+  submit_text="提交"
+  bind:submit="submitReply"
+  hint="{{replyHint}}"
+></qiX-input>
+
+<qiX-input 
+  id="qedit" 
+  title="{{editInfo.title}}" 
+  max_length="-1"
+  use_textarea="{{false}}"
+  placeholder="{{editInfo.placeholder}}"
+  submit_text="更新"
+  bind:submit="finishEdit"
+  bind:cancel="cancelEdit"
+></qiX-input>

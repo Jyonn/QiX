@@ -1,0 +1,19 @@
+<view class="mask" wx:if="{{is_writing}}" bindtap="cancelInput"></view>
+<view class="write-container {{is_writing? 'show' : 'hide'}}">
+  <view class="write-main">
+    <view class="header">
+      <text class="title">{{title}}</text>
+      <view class="btn-header">
+        <image class="close light" src="../../res/cancel-black.png" bindtap="cancelInput"></image>
+        <image class="close dark" src="../../res/cancel-white.png" bindtap="cancelInput"></image>
+        <button class="submit" type="primary" size="mini" disabled="{{input_text == ''}}" bindtap="submitInput">{{submit_text}}</button>
+      </view>
+    </view>
+    <text class="hint" wx:if="{{hint}}">{{hint}}</text>
+    <textarea class="input" placeholder="{{placeholder}}" placeholder-class="input-placeholder" bindinput="inputing" value="{{input_text}}" maxlength="{{max_length}}" wx:if="{{use_textarea}}" show-confirm-bar="{{false}}"></textarea>
+    <input class="input" placeholder="{{placeholder}}" placeholder-class="input-placeholder" bindinput="inputing" value="{{input_text}}" maxlength="{{max_length}}" wx:else></input>
+    <view class="candidates">
+      <text wx:for="{{candidates}}" data-value="{{item}}" bindtap="autoFill">{{item}}</text>
+    </view>
+  </view>
+</view>

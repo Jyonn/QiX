@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="main">
+    <view class="articles">
+      <view class="article-box" wx:for="{{articles}}" wx:if="{{hasArticle}}" data-aid="{{item.aid}}" bindtap="navigateComment">
+        <text class="title">{{item.title}}</text>
+        <view class="info-box">
+          <text class="item self-producted" wx:if="{{item.self_product}}">原创</text>
+          <text class="item author">{{item.author}}</text>
+          <text class="item origin">{{item.origin}}</text>
+          <text class="item create_time">{{item.create_time}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="center" wx:if="{{!hasArticle}}">
+      <text>您可以在这里查看互动留言板</text>
+    </view>
+  </view>
+</view>

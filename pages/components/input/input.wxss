@@ -1,0 +1,139 @@
+
+.write-container.show {
+  bottom: 0;
+  filter: opacity(1.0);
+}
+.write-container.hide {
+  bottom: -70vh;
+  filter: opacity(0.0);
+}
+.write-container {
+  transition: 0.3s;
+  box-sizing: border-box;
+  position: fixed;
+  height: 70vh;
+  background: white;
+  width: 100%;
+  /* border: 12px solid black; */
+  border-radius: 12px 12px 0 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .write-container {
+    background: #2b2c2d;
+  }
+}
+
+.write-container .write-main {
+  box-sizing: border-box;
+  /* position: relative; */
+  height: 100%;
+  padding: calc(20px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) 12px calc(16px + env(safe-area-inset-left));
+  overflow-y: scroll;
+}
+
+.write-container .write-main .header {
+  position: relative;
+  font-size: 16px;
+  text-align: center;
+}
+
+.write-container .write-main .btn-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.write-container .write-main .header .close.dark {
+  display: none;
+}
+
+.write-container .write-main .header .close.light {
+  display: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  .write-container .write-main .header .close.dark {
+    display: inherit;
+  }
+  .write-container .write-main .header .close.light {
+    display: none;
+  }
+}
+
+.write-container .write-main .header .close {
+  width: 24px;
+  height: 24px;
+  float: left;
+}
+
+.write-container .write-main .header .title {
+  line-height: 32px;
+}
+
+.write-container .write-main .header .submit {
+  margin: 0;
+}
+
+.write-container .write-main .hint {
+  background: #f6f7f8;
+  color: #ccc;
+  padding: 8px;
+  font-size: 13px;
+  display: block;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .write-container .write-main .hint {
+    background: #292a2b;
+    color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.write-container .write-main .input {
+  margin-top: 10px;
+  width: 100%;
+  letter-spacing: .034em;
+}
+
+.write-container .write-main .candidates {
+  margin-top: 15px;
+}
+
+.write-container .write-main .candidates text {
+  font-size: 13px;
+  line-height: 20px;
+  padding: 3px 10px;
+  color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 13px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  display: inline-table;
+}
+
+.input-placeholder {
+  color: #ddd;
+}
+
+@media (prefers-color-scheme: dark) {
+  .input-placeholder {
+    color: #666;
+  }
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "qiX-input": "../components/input/input"
+  }
+}

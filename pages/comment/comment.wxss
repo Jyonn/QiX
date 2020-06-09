@@ -1,0 +1,114 @@
+/* pages/comment/comment.wxss */
+
+.comments {
+  padding: calc(20px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) 12px calc(16px + env(safe-area-inset-left));
+  margin-bottom: 20px;
+}
+
+.comments .header {
+  margin: 10px 0;
+}
+
+.comments .header .item {
+  font-size: 15px;
+  color: rgba(0,0,0,0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  .comments .header .item {
+    color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.comments .header .write-comment {
+  float: right;
+  color: #576b95;
+  line-height: 1.4;
+  font-weight: normal;
+  border: none;
+  padding: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .comments .header .write-comment {
+    color: #7f90a5;
+  }
+}
+
+.comments .content-list .content {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.comments .content-list .content .avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 2px;
+  margin-top: 5px;
+}
+
+.comments .content-list .content .user-box {
+  margin-left: 8px;
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  color: rgba(0,0,0,0.3);
+  width: calc(100% - 34px - 8px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .comments .content-list .content .user-box {
+    color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.comments .content-list .content .user-box .first-line {
+  margin-bottom: 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comments .content-list .content .user-box .first-line .icon-delete {
+  color: #576b95;
+}
+
+@media (prefers-color-scheme: dark) {
+  .comments .content-list .content .user-box .first-line .icon-delete {
+    color: #7f90a5;
+  }
+}
+
+.comments .content-list .content .user-box .raw-content {
+  font-size: 16px;
+  color: #333;
+  text-align: justify;
+}
+
+@media (prefers-color-scheme: dark) {
+  .comments .content-list .content .user-box .raw-content {
+    color: #ddd;
+  }
+}
+
+.comments .content-list .content .user-box .replies {
+  margin-top: 5px;
+  border-left: 2px solid #ddd;
+  padding-left: 5px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .comments .content-list .content .user-box .replies{
+    border-left: 2px solid #333;
+  }
+}
+
+.comments .content-list .content .user-box .replies .reply-box:first-child {
+  margin-top: 0;
+}
+
+.comments .content-list .content .user-box .replies .reply-box {
+  margin-top: 5px;
+}

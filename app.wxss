@@ -1,0 +1,116 @@
+.container {
+  box-sizing: border-box;
+  font-family: -apple-system-font,BlinkMacSystemFont,"Helvetica Neue","PingFang SC","Hiragino Sans GB","Microsoft YaHei UI","Microsoft YaHei",Arial,sans-serif;
+  letter-spacing: .034em;
+  background: #ededed;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.main {
+  background: #fff;
+  padding: calc(20px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) 12px calc(16px + env(safe-area-inset-left));
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    background: #17191a;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .main {
+    background: #222;
+  }
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url(data:font/truetype;charset=utf-8;base64,AAEAAAANAIAAAwBQRkZUTYuRrBkAAAaYAAAAHEdERUYAJwANAAAGeAAAAB5PUy8yDxMGVwAAAVgAAABgY21hcOn18TYAAAHUAAABZmdhc3AAAAAQAAAGcAAAAAhnbHlmWvnwvAAAA0wAAAE4aGVhZBkLyY0AAADcAAAANmhoZWEHwgPHAAABFAAAACRobXR4C5UAAAAAAbgAAAAabG9jYQBmALwAAAM8AAAAEG1heHAADwA0AAABOAAAACBuYW1l+lhN2AAABIQAAAGbcG9zdHzQkVIAAAYgAAAATwABAAAAAAAAqTDpmF8PPPUACwQAAAAAANr2wogAAAAA2vbCiAAA/8AEAAPAAAAACAACAAAAAAAAAAEAAAPA/8AAAAQAAAAAAAQAAAEAAAAAAAAAAAAAAAAAAAAGAAEAAAAHADIABwAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAwOAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAAHprAPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAEEAAAAAAAAAAFVAAAAAAAAAgAAAAQAAAAAQAAAAAAAAwAAAAMAAAAcAAEAAAAAAGAAAwABAAAAHAAEAEQAAAAMAAgAAgAEAAEAIOks6az//f//AAAAAAAg6SzprP/9//8AAP/kFtkWWgADAAEADAAAAAAAAAAAAAAAAQADAAABBgAAAQMAAAAAAAABAgAAAAIAAAAAAAAAAAAAAAAAAAABAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAgAEAAYAE4AnAABAAAAAAAAAAAAAgAAOQIAAQAAAAAAAAAAAAIAADkCAAEAAAAAAAAAAAACAAA5AgAFAAD/wAQAA8AACAALABMAFgAcAAABESEHESERIRElFSMDETM1IRUHERMVIwEhETM1IQKA/kDAAYACgPzAZRvAAUDAwGUB5f4AwAFAAsABAMD9wP8AAwClZf4AAcDAwMD/AAFlZf4AAcDAAAAHAED/wAOAA8AACQANABEAFQAZAC0AMQAAExEUFjMhMjY1EQEjETMTIxEzEyMRMxMjETMTIzU0JisBIgYdASMiBh0BITU0JiEjNTOAJhoCQBom/gBAQIBAQIBAQIBAQJDQHBTgFBzQFBwDQBz+3MDAAoD9gBomJhoCgP3AAcD+QAHA/kABwP5AAcABQFAUHBwUUBwUUFAUHD8AAAAAAA4ArgABAAAAAAABAAcAEAABAAAAAAACAAcAKAABAAAAAAADAAcAQAABAAAAAAAEAAcAWAABAAAAAAAFAAsAeAABAAAAAAAGAAcAlAABAAAAAAAKABoA0gADAAEECQABAA4AAAADAAEECQACAA4AGAADAAEECQADAA4AMAADAAEECQAEAA4ASAADAAEECQAFABYAYAADAAEECQAGAA4AhAADAAEECQAKADQAnABpAGMAbwBtAG8AbwBuAABpY29tb29uAABSAGUAZwB1AGwAYQByAABSZWd1bGFyAABpAGMAbwBtAG8AbwBuAABpY29tb29uAABpAGMAbwBtAG8AbwBuAABpY29tb29uAABWAGUAcgBzAGkAbwBuACAAMQAuADAAAFZlcnNpb24gMS4wAABpAGMAbwBtAG8AbwBuAABpY29tb29uAABGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAC4AAEZvbnQgZ2VuZXJhdGVkIGJ5IEljb01vb24uAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHAAABAgACAQMAAwEEAQUGZ2x5cGgxB3VuaTAwMDEHdW5pRTkyQwd1bmlFOUFDAAABAAH//wAPAAEAAAAMAAAAFgAAAAIAAQABAAYAAQAEAAAAAgAAAAAAAAABAAAAANWkJwgAAAAA2vbCiAAAAADa9sKI) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-copy:before {
+  content: "\e92c";
+}
+.icon-delete:before {
+  content: "\e9ac";
+}
+
+.article-header .title-box {
+  margin-bottom: 14px;
+}
+
+.article-header .title-box .title {
+  font-size: 22px;
+  line-height: 1.4;
+  font-weight: bold;
+  color: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+  .article-header .title-box .title {
+    color: #ddd;
+  }
+}
+
+.article-header .description .item {
+  font-size: 15px;
+  color: rgba(0,0,0,0.3);
+  margin: 0 10px 10px 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .article-header .description .item {
+    color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.article-header .description .self-producted {
+  background: #f2f2f2;
+  padding: 2px 4px;
+  font-size: 12px;
+  line-height: 1.67;
+  vertical-align: middle;
+  border-radius: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .article-header .description .self-producted {
+    background: #333;
+  }
+}
+
+.article-header .description .origin {
+  color: #576b95;
+}
+
+@media (prefers-color-scheme: dark) {
+  .article-header .description .origin {
+    color: #7f90a5;
+  }
+}
+
+.article-header .description {
+  margin-bottom: 14px;
+}

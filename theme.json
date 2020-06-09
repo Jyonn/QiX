@@ -1,0 +1,14 @@
+{
+  "light": {
+    "navBackgroundColor": "#ffffff",
+    "navTextStyle": "black",
+    "manageIcon": "pages/res/manage-normal.png",
+    "interactIcon": "pages/res/interact-normal.png"
+  },
+  "dark": {
+    "navBackgroundColor": "#222",
+    "navTextStyle": "white",
+    "manageIcon": "pages/res/manage-dark.png",
+    "interactIcon": "pages/res/interact-dark.png"
+  }
+}

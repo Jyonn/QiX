@@ -1,0 +1,54 @@
+<view class="container">
+  <view class="main">
+    <view class="article-header">
+      <view class="title-box">
+        <text class="title" bindtap="editTitle">{{title}}</text>
+      </view>
+      <view class="description">
+        <text class="item self-producted" wx:if="{{selfProduct}}">原创</text>
+        <text class="item author" bindtap="editAuthor">{{author}}</text>
+        <text class="item origin" bindtap="editOrigin">{{origin}}</text>
+        <text class="item date">今天</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="edit-box">
+    <text class="info">点击上方信息进行修改（留言板页面也可二次修改），下方配置提交后无法修改</text>
+  </view>
+
+  <view class="setting-box">
+    <view class="main">
+      <view class="switches">
+        <view class="switch-box">
+          <text>添加原创标识</text>
+          <switch type="switch" bindchange="switchSelfProduct"></switch>
+        </view>
+        <view class="switch-box">
+          <text>留言在筛选后展示</text>
+          <switch type="switch" bindchange="switchRequireReview"></switch>
+        </view>
+        <view class="switch-box">
+          <text>任何人都可回复留言</text>
+          <switch type="switch" bindchange="switchAllowOpenReply"></switch>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="button-box">
+    <button type="primary" bindtap="postArticle">提交</button>
+    <button bindtap="resetInput">重置</button>
+  </view>
+</view>
+
+<qiX-input 
+  id="qinput" 
+  title="{{editTitle}}" 
+  max_length="-1"
+  use_textarea="{{false}}"
+  placeholder="{{placeholder}}"
+  submit_text="确认"
+  candidates="{{candidates}}"
+  bind:submit="finishEdit"
+></qiX-input>

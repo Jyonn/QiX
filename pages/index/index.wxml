@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="main">
+    <text class="new-article" bindtap="newArticle">新建留言板 > </text>
+    <view class="articles">
+      <view class="article-box" wx:for="{{articles}}" wx:if="{{hasArticle}}" data-aid="{{item.aid}}" bindtap="tapArticle">
+        <text class="title">{{item.title}}</text>
+        <view class="info-box">
+          <text class="item self-producted" wx:if="{{item.self_product}}">原创</text>
+          <text class="item author">{{item.author}}</text>
+          <text class="item origin">{{item.origin}}</text>
+          <text class="item create_time">{{item.create_time}}</text>
+        </view>
+        <view class="line"></view>
+        <view class="btn-box">
+          <text class="btn icon-copy" data-type="copy">复制链接</text>
+          <text class="btn icon-delete" data-type="delete">删除</text>
+        </view>
+      </view>
+    </view>
+    <view class="center" wx:if="{{!hasArticle}}">
+      <text>您可以在这里查看历史留言板</text>
+      <button type="primary" bindtap="newArticle">新建留言板</button>
+    </view>
+  </view>
+</view>

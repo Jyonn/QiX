@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/new/new",
+    "pages/comment/comment",
+    "pages/mine/mine",
+    "pages/interact/interact"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "@navBackgroundColor",
+    "navigationBarTitleText": "奇奇十号",
+    "navigationBarTextStyle": "@navTextStyle"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "管理",
+        "iconPath": "@manageIcon",
+        "selectedIconPath": "pages/res/manage-active.png"
+      },
+      {
+        "pagePath": "pages/interact/interact",
+        "text": "互动",
+        "iconPath": "@interactIcon",
+        "selectedIconPath": "pages/res/interact-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "darkmode": true,
+  "themeLocation": "theme.json"
+}
